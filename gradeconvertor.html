@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeConvertpr</title>
+</head>
+<body>
+    <div class="grade" id="grade">
+        <label for="mark">Enter your mark</label>
+        <input type="number" name="mark" id="mark" placeholder="enter out of 100">
+        <input type="button" value="Get grade" onclick="convertGrade()">
+        <p id="result"></p>
+    </div>    
+        <script>
+            function convertGrade(){
+                let mark = parseFloat(document.getElementById('mark').value)
+                let grade = ''
+                if(90 <= mark && mark <= 100){
+                    grade = 'A+'
+                    
+                }
+                else if(80 <= mark && mark < 90){
+                     grade = 'A'
+                }
+                else if(70 <= mark && mark < 80){
+                    grade = 'B+'
+               }
+               else if(60 <= mark && mark < 70){
+                grade = 'B'
+               }
+               else if(50 <= mark && mark < 60){
+                grade = 'C+'
+               }
+               else if(40 <= mark && mark < 50){
+                grade = 'C'
+               }
+               else if(30 <= mark && mark < 40){
+                grade = 'D+'
+               }
+               else{
+                    grade = ' F (Supply) Or You entered wrong mark '
+                    
+                }
+                document.getElementById('result').innerHTML = `Your grade is ${grade}`
+            }
+
+        </script>
+    </div>
+</body>
+</html>
